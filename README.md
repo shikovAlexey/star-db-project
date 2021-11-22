@@ -1,4 +1,6 @@
-# Stae wars project
+# Star wars project
+
+# how to run:
 
 # Getting Started with Create React App
 
