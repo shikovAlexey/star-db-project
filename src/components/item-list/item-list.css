@@ -1,0 +1,35 @@
+.items {
+    display: flex;
+    width: 100%;
+   
+}
+
+.item-list {
+    display: flex;
+    width: 100%;
+    margin-right: 5px;
+}
+
+.item-list ul {
+width: 100%;
+}
+
+.item-list li {
+    padding: 20px;
+    cursor: pointer;
+    
+}
+.item-list li:hover {
+  
+    background-color: #444;
+}
+
+.item-list div {
+    display: flex;
+    justify-content: center;
+}
+
+.items .person-details {
+    width: 100%;
+   
+}

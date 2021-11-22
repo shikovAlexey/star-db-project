@@ -1,0 +1,10 @@
+.error-indicator {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 30px);
+    align-items: center;
+}
+
+img {
+    width: 125px;
+}
