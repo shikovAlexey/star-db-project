@@ -14,6 +14,7 @@ export default class PeoplePage extends Component {
 
     state = {
         selectedItem: 5,
+
         hasError: false
     };
 
