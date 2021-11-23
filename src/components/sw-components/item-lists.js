@@ -32,5 +32,5 @@ const StarshipList = withData(withChildFunction(ItemList, renderName), getAllSta
 export {
     PersonList,
     PlanetList,
-    StarshipList,
+    StarshipList
 }

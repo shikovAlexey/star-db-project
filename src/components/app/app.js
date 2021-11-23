@@ -9,6 +9,8 @@ import PeoplePage from "../people-page";
 import SwapiService from "../../services/swapi-service";
 import StarshipsPage from "../starships-page";
 import PlanetsPage from "../planets-page";
+import ErrorBoundry from "../error-boundry";
+import { SwapiServiceProvider } from "../swapi-service-context/swapi-service-context";
 
 export default class App extends Component {
 
@@ -44,16 +46,20 @@ export default class App extends Component {
         const { getPersonImage, getStarshipImage, getPlanetImage } = this.swapiService;
 
         return (
-            <div className='app'>
-                <Header />
-                {randomPlanet}
-                <ToggleRandomPlanetBtn
-                    onToggleRandomPlanet={this.onToggleRandomPlanet}
-                />
-                <PeoplePage getImageUrl={getPersonImage} />
-                <StarshipsPage getImageUrl={getStarshipImage} />
-                <PlanetsPage getImageUrl={getPlanetImage} />
-            </div>
+            <ErrorBoundry>
+                <SwapiServiceProvider value={this.swapiService}>
+                    <div className='app'>
+                        <Header />
+                        {randomPlanet}
+                        <ToggleRandomPlanetBtn
+                            onToggleRandomPlanet={this.onToggleRandomPlanet}
+                        />
+                        <PeoplePage getImageUrl={getPersonImage} />
+                        <StarshipsPage getImageUrl={getStarshipImage} />
+                        <PlanetsPage getImageUrl={getPlanetImage} />
+                    </div>
+                </SwapiServiceProvider>
+            </ErrorBoundry>
         );
     };
 };
