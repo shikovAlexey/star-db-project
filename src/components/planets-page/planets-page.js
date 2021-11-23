@@ -35,7 +35,6 @@ export default class PlanetsPage extends Component {
         const itemList = (
             <PlanetList
                 onItemSelected={this.onItemSelected}
-                renderItem={({ name }) => `${name}`}
             />
         );
         const starshipDetails = (

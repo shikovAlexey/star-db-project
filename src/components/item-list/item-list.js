@@ -5,12 +5,12 @@ import ErrorIndicator from "../error-indicator";
 
 const ItemList = (props) => {
 
-    const { data, onItemSelected, renderItem } = props;
+    const { data, onItemSelected } = props;
 
     const renderItems = (arr) => {
         return arr.map((item) => {
             const { id } = item;
-            const label = renderItem(item);
+            const label = props.children(item);
 
             return <li className='list-group-item'
                 key={id}

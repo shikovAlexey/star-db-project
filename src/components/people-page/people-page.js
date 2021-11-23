@@ -14,7 +14,6 @@ export default class PeoplePage extends Component {
 
     state = {
         selectedItem: 5,
-
         hasError: false
     };
 
@@ -35,8 +34,9 @@ export default class PeoplePage extends Component {
         const itemList = (
             <PersonList
                 onItemSelected={this.onItemSelected}
-                renderItem={({ name }) => `${name}`}
-            />
+            >
+                {({ name }) => `${name}`}
+            </PersonList>
         );
         const personDetails = (
             <PersonDetails

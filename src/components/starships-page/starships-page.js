@@ -35,7 +35,6 @@ export default class StarshipsPage extends Component {
         const itemList = (
             <StarshipList
                 onItemSelected={this.onItemSelected}
-                renderItem={({ name }) => `${name}`}
             />
         );
         const starshipDetails = (
