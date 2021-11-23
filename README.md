@@ -1,5 +1,9 @@
 # Star wars project
 
+## Технологии
+
+html, css, javascript, react.
+
 ## Available Scripts
 
 In the project directory, you can run:
