@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import './app.css';
-
 import Header from "../header";
 import RandomPlanet from "../random-planet";
 import ToggleRandomPlanetBtn from "../toggle-random-planet-btn";

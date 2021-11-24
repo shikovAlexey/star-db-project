@@ -23,4 +23,4 @@ export {
     PersonDetails,
     StarshipDetails,
     PlanetDetails,
-}
+};

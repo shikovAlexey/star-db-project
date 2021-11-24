@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const withData = (View, getData) => {
+const withData = (View) => {
     return class extends Component {
 
         state = {
@@ -22,7 +22,7 @@ const withData = (View, getData) => {
         }
 
         componentDidMount() {
-            getData()
+            this.props.getData()
                 .then(this.pepopleOnLoaded)
                 .catch(this.onError)
         }
