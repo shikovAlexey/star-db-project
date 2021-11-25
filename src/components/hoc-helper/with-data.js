@@ -25,7 +25,7 @@ const withData = (View) => {
             this.props.getData()
                 .then(this.pepopleOnLoaded)
                 .catch(this.onError)
-        }
+        };
 
         render() {
             const data = this.state;

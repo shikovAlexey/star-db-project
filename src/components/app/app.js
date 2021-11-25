@@ -42,8 +42,6 @@ export default class App extends Component {
             return <ErrorIndicator />
         }
 
-        const { getPersonImage, getStarshipImage, getPlanetImage } = this.swapiService;
-
         return (
             <ErrorBoundry>
                 <SwapiServiceProvider value={this.swapiService}>
@@ -53,9 +51,9 @@ export default class App extends Component {
                         <ToggleRandomPlanetBtn
                             onToggleRandomPlanet={this.onToggleRandomPlanet}
                         />
-                        <PeoplePage getImageUrl={getPersonImage} />
-                        <StarshipsPage getImageUrl={getStarshipImage} />
-                        <PlanetsPage getImageUrl={getPlanetImage} />
+                        <PeoplePage />
+                        <StarshipsPage />
+                        <PlanetsPage />
                     </div>
                 </SwapiServiceProvider>
             </ErrorBoundry>

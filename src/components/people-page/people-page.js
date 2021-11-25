@@ -32,7 +32,6 @@ export default class PeoplePage extends Component {
             <PersonList
                 onItemSelected={this.onItemSelected}
             >
-                {({ name }) => `${name}`}
             </PersonList>
         );
         const personDetails = (
