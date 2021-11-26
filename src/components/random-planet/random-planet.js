@@ -24,9 +24,20 @@ export default class RandomPlanet extends Component {
         }, updateInterval);
     };
 
-    static defaultProps ={
-        updateInterval: 10000       
-    }
+    static defaultProps = {
+        updateInterval: 10000
+    };
+
+    static propTypes = {
+        updateInterval: (props, propName, componentName) => {
+            console.log(props, propName, componentName)
+            const value = props[propName];
+            if (typeof value === 'number' && !isNaN(value)) {
+                return null;
+            }
+            return new TypeError(`${componentName}: ${propName} must be number`)
+        }
+    };
 
     componentWillUnmount() {
         clearInterval(this.interval);
@@ -51,7 +62,7 @@ export default class RandomPlanet extends Component {
         });
     };
 
-    render() {  
+    render() {
 
         const { planet, loading, error } = this.state;
 

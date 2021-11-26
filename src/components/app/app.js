@@ -36,7 +36,7 @@ export default class App extends Component {
     render() {
         const { toggleRandomPlanet, hasError } = this.state;
 
-        const randomPlanet = toggleRandomPlanet ? <RandomPlanet/> : null;
+        const randomPlanet = toggleRandomPlanet ? <RandomPlanet /> : null;
 
         if (hasError) {
             return <ErrorIndicator />
