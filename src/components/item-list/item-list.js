@@ -2,6 +2,7 @@ import React from "react";
 import './item-list.css';
 import Spinner from "../spinner";
 import ErrorIndicator from "../error-indicator";
+import PropTypes from 'prop-types';
 
 const ItemList = (props) => {
 
@@ -23,6 +24,11 @@ const ItemList = (props) => {
 
     ItemList.defaultProps = {
         onItemSelected: () => { }
+    }
+
+    ItemList.propTypes = {
+        onItemSelected: PropTypes.func,
+        data: PropTypes.arrayOf(PropTypes.object).isRequired
     }
 
     const { error, loading, itemList } = data;
