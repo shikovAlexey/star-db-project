@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import './people-page.css';
-import { Record } from "../item-details";
 import ErrorIndicator from "../error-indicator";
 import Row from '../row';
 import ErrorBoundry from "../error-boundry";
@@ -35,13 +34,8 @@ export default class PeoplePage extends Component {
             </PersonList>
         );
         const personDetails = (
-            <PersonDetails
-                itemId={selectedItem}
-            >
-                <Record field='gender' label='Gender:' />
-                <Record field='eyeColor' label='Eye Color:' />
-                <Record field='birthYear' label='Birth year:' />
-            </PersonDetails>
+            <PersonDetails itemId={selectedItem} />
+
         );
 
         return (

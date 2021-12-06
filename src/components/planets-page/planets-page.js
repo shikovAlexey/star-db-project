@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import './planets-page.css';
-import { Record } from "../item-details";
 import ErrorIndicator from "../error-indicator";
 import Row from '../row';
 import SwapiService from "../../services/swapi-service";
@@ -38,13 +37,7 @@ export default class PlanetsPage extends Component {
             />
         );
         const starshipDetails = (
-            <PlanetDetails
-                itemId={selectedItem}
-            >
-                <Record field='population' label='Population:' />
-                <Record field='rotationPeriod' label='Rotation Period:' />
-                <Record field='diameter' label='Diameter:' />
-            </PlanetDetails>
+            <PlanetDetails itemId={selectedItem} />
         );
 
         return (

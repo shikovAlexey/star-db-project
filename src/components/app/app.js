@@ -11,6 +11,7 @@ import PlanetsPage from "../planets-page";
 import ErrorBoundry from "../error-boundry";
 import { SwapiServiceProvider } from "../swapi-service-context/swapi-service-context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { StarshipDetails } from "../sw-components";
 
 export default class App extends Component {
 
@@ -53,11 +54,17 @@ export default class App extends Component {
                             <ToggleRandomPlanetBtn
                                 onToggleRandomPlanet={this.onToggleRandomPlanet}
                             />
-                            <Routes>
-                                <Route path='/people' element={<PeoplePage />} />
-                                <Route path='/planets' element={<PlanetsPage />} />
-                                <Route path='/starships' element={<StarshipsPage />} />
-                            </Routes>
+                            <div className='route'>
+                                <Routes>
+                                    <Route path='/' element={<h1>Welcome to starDB</h1>} />
+                                    <Route path='/people' element={<PeoplePage />} />
+                                    <Route path='/planets' element={<PlanetsPage />} />
+                                    <Route path='/starships' element={<StarshipsPage />} />
+                                    <Route path='/starships/:id' element={<StarshipDetails itemId={5}>
+                                    </StarshipDetails>} />
+                                </Routes>
+
+                            </div>
                         </div>
                     </Router>
                 </SwapiServiceProvider>

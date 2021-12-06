@@ -25,12 +25,12 @@ const ItemList = (props) => {
         onItemSelected: () => { }
     }
 
-
     const { error, loading, itemList } = data;
 
     const errorMessage = error ? <ErrorIndicator /> : null;
     const spinner = loading ? <Spinner /> : null;
     const items = itemList ? renderItems(itemList) : null;
+
 
     return (
         <div className='items' >

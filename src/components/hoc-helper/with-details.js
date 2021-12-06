@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import { Record } from "../item-details";
 
-const withDetails = (View, getData, getPersonImage) => {
+const withDetails = (View, getData, getPersonImage, personRecord) => {
     return class extends Component {
 
         state = {
@@ -12,7 +13,6 @@ const withDetails = (View, getData, getPersonImage) => {
 
         componentDidMount() {
             this.updateItem();
-
         }
 
         componentDidUpdate(prevProps) {
@@ -53,8 +53,16 @@ const withDetails = (View, getData, getPersonImage) => {
 
             const data = this.state;
 
+            const mapPersonRecord = personRecord.map((item, index) => {
+                return <Record {...item} key={index}></Record>;
+            })
+
             return (
-                <View {...this.props} data={data} />
+                <View {...this.props} data={data} >
+
+                    {mapPersonRecord}
+
+                </View>
             )
         };
     };

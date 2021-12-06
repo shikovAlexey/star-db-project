@@ -5,7 +5,9 @@ import './header.css';
 const Header = () => {
     return (
         <div className='header'>
-            <h1 className='logo'><Link className='logo-link' to='/'>Star DB</Link></h1>
+            <h1 className='logo'>
+                <Link className='logo-link' to='/'>StarDB</Link>
+            </h1>
             <div className='top-panel'>
                 <Link className='panel-item' to='/people'>People</Link>
                 <Link className='panel-item' to='/planets'>Planets</Link>

@@ -7,7 +7,7 @@ import {
 import {
     PersonDetails,
     StarshipDetails,
-    PlanetDetails
+    PlanetDetails,
 } from './details';
 
 export {

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import './starships-page.css';
-import { Record } from "../item-details";
 import ErrorIndicator from "../error-indicator";
 import Row from '../row';
 import SwapiService from "../../services/swapi-service";
@@ -10,7 +9,7 @@ import { StarshipDetails } from "../sw-components";
 
 export default class StarshipsPage extends Component {
 
-    swapiService = new SwapiService()
+    swapiService = new SwapiService();
 
     state = {
         selectedItem: 5,
@@ -38,13 +37,7 @@ export default class StarshipsPage extends Component {
             />
         );
         const starshipDetails = (
-            <StarshipDetails
-                itemId={selectedItem}
-            >
-                <Record field='model' label='Model:' />
-                <Record field='crew' label='Crew:' />
-                <Record field='passengers' label='Passengers:' />
-            </StarshipDetails>
+            <StarshipDetails itemId={selectedItem} />
         );
 
         return (

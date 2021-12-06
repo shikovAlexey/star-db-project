@@ -5,6 +5,7 @@
     padding: 20px;
     min-height: 250px;
     border-radius: 10px;
+    border: 1px solid #444;
 }
 
 .planet-img {
@@ -23,4 +24,5 @@
 .toggle-hide {
     display: none;
 }
+
 
