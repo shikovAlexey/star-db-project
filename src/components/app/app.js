@@ -10,7 +10,7 @@ import StarshipsPage from "../starships-page";
 import PlanetsPage from "../planets-page";
 import ErrorBoundry from "../error-boundry";
 import { SwapiServiceProvider } from "../swapi-service-context/swapi-service-context";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { StarshipDetails } from "../sw-components";
 
 export default class App extends Component {
@@ -55,15 +55,14 @@ export default class App extends Component {
                                 onToggleRandomPlanet={this.onToggleRandomPlanet}
                             />
                             <div className='route'>
-                                <Routes>
-                                    <Route path='/' element={<h1>Welcome to starDB</h1>} />
-                                    <Route path='/people' element={<PeoplePage />} />
-                                    <Route path='/planets' element={<PlanetsPage />} />
-                                    <Route path='/starships' element={<StarshipsPage />} />
-                                    <Route path='/starships/:id' element={<StarshipDetails itemId={5}>
-                                    </StarshipDetails>} />
-                                </Routes>
-
+                                <Route exact path='/' render={() => <h1>Welcome to starDB</h1>} />
+                                <Route exact path='/people/:id?' render={() => <PeoplePage />} />
+                                <Route exact path='/planets' render={() => <PlanetsPage />} />
+                                <Route exact path='/starships' render={() => <StarshipsPage />} />
+                                <Route path='/starships/:id' render={({ match }) => {
+                                    const { id } = match.params;
+                                    return <StarshipDetails itemId={id} />
+                                }} />
                             </div>
                         </div>
                     </Router>

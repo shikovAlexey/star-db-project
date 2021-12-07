@@ -4,14 +4,13 @@
     padding: 1rem;
     width: 100%;
     border: 1px solid #444;
-    margin-left: 5px;
+    border-radius: 10px;
 }
 
 
 .person-image {
     border-radius: 10px;
-    width: 152px;
-    height: 250px;
+    width: 50%
 }
 
 .person-details .list-group-item {

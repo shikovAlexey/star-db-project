@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import './planets-page.css';
-import ErrorIndicator from "../error-indicator";
-import Row from '../row';
-import SwapiService from "../../services/swapi-service";
 import ErrorBoundry from "../error-boundry";
 import { PlanetList } from "../sw-components/item-lists";
+import ErrorIndicator from "../error-indicator";
 import { PlanetDetails } from "../sw-components";
+import Row from '../row';
 
 export default class PlanetsPage extends Component {
-
-    swapiService = new SwapiService()
 
     state = {
         selectedItem: 5,
@@ -30,19 +27,20 @@ export default class PlanetsPage extends Component {
         if (hasError) {
             return <ErrorIndicator />
         };
-
         const itemList = (
             <PlanetList
                 onItemSelected={this.onItemSelected}
-            />
+            >
+            </PlanetList>
         );
-        const starshipDetails = (
+        const planetDetails = (
             <PlanetDetails itemId={selectedItem} />
+
         );
 
         return (
             <ErrorBoundry>
-                <Row left={itemList} right={starshipDetails} />
+                <Row left={itemList} right={planetDetails} />
             </ErrorBoundry>
         );
     }

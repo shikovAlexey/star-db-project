@@ -23,7 +23,7 @@ const ItemList = (props) => {
 
     ItemList.defaultProps = {
         onItemSelected: () => { }
-    }
+    };
 
     const { error, loading, itemList } = data;
 

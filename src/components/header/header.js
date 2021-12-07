@@ -9,9 +9,9 @@ const Header = () => {
                 <Link className='logo-link' to='/'>StarDB</Link>
             </h1>
             <div className='top-panel'>
-                <Link className='panel-item' to='/people'>People</Link>
-                <Link className='panel-item' to='/planets'>Planets</Link>
-                <Link className='panel-item' to='/starships'>Starships</Link>
+                <Link className='panel-item' to='/people/'>People</Link>
+                <Link className='panel-item' to='/planets/'>Planets</Link>
+                <Link className='panel-item' to='/starships/'>Starships</Link>
             </div>
         </div>
     );

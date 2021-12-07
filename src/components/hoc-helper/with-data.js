@@ -17,7 +17,6 @@ const withData = (View) => {
         };
 
         pepopleOnLoaded = (itemList) => {
-            itemList = itemList.slice(0, 5);
             this.setState({ itemList, loading: false });
         }
 
