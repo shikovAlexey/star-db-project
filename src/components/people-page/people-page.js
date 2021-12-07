@@ -10,11 +10,21 @@ const PeoplePage = ({ match, history }) => {
 
     const { id } = match.params;
 
+    const onSelectedPersonDetails = (id) => {
+        if (id) {
+            return <PersonDetails itemId={id} />
+        }
+        else {
+            return <h2>Select some person</h2>;
+        };
+    };
+
+
     return (
         <ErrorBoundry>
             <Row
                 left={<PersonList onItemSelected={(id) => history.push(id)} />}
-                right={<PersonDetails itemId={id} />}
+                right={onSelectedPersonDetails(id)}
             />
         </ErrorBoundry>
     );

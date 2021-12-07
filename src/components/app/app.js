@@ -3,7 +3,6 @@ import './app.css';
 import Header from "../header";
 import RandomPlanet from "../random-planet";
 import ToggleRandomPlanetBtn from "../toggle-random-planet-btn";
-import ErrorIndicator from "../error-indicator";
 import PeoplePage from "../people-page";
 import SwapiService from "../../services/swapi-service";
 import StarshipsPage from "../starships-page";
@@ -12,6 +11,8 @@ import ErrorBoundry from "../error-boundry";
 import { SwapiServiceProvider } from "../swapi-service-context/swapi-service-context";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { StarshipDetails } from "../sw-components";
+import SecretPage from "../pages/secret-page";
+import LoginPage from "../pages/login-page";
 
 export default class App extends Component {
 
@@ -19,8 +20,14 @@ export default class App extends Component {
 
     state = {
         toggleRandomPlanet: true,
-        hasError: false
+        isLoggedIn: false
     }
+
+    onLogin = () => {
+        this.setState({
+            isLoggedIn: true
+        });
+    };
 
     componentDidCatch() {
         this.setState({ hasError: true });
@@ -36,20 +43,16 @@ export default class App extends Component {
     };
 
     render() {
-        const { toggleRandomPlanet, hasError } = this.state;
+        const { toggleRandomPlanet, isLoggedIn } = this.state;
 
         const randomPlanet = toggleRandomPlanet ? <RandomPlanet /> : null;
-
-        if (hasError) {
-            return <ErrorIndicator />
-        }
 
         return (
             <ErrorBoundry>
                 <SwapiServiceProvider value={this.swapiService}>
                     <Router>
                         <div className='app'>
-                            <Header />
+                            <Header isLoggedIn={isLoggedIn} />
                             {randomPlanet}
                             <ToggleRandomPlanetBtn
                                 onToggleRandomPlanet={this.onToggleRandomPlanet}
@@ -63,6 +66,12 @@ export default class App extends Component {
                                     const { id } = match.params;
                                     return <StarshipDetails itemId={id} />
                                 }} />
+                                <Route exact path='/login' render={() => (
+                                    <LoginPage isLoggedIn={isLoggedIn} onLogin={this.onLogin} />
+                                )} />
+                                <Route exact path='/secret' render={() => (
+                                    <SecretPage isLoggedIn={isLoggedIn} />
+                                )} />
                             </div>
                         </div>
                     </Router>

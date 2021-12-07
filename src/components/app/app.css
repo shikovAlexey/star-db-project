@@ -1,6 +1,7 @@
 .app {
     max-width: 1000px;
     margin: 20px auto;
+    padding: 10px;
 }
 
 .item-listed {
