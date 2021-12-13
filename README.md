@@ -2,7 +2,7 @@
 
 ## Технологии
 
-html, css, javascript, react.
+html, css, bootstrap, javascript, react.
 
 ## Available Scripts
 
